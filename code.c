@@ -51,7 +51,9 @@ int main()
                     {
                          if(strcmp(p[i].bauthor,authorname)==0)
                             printf("\nBook Name : %s\nAuthor name : %s\nBook Version : %d\nBook Year : %s\nBook Cost : %d",p[i].bname,p[i].bauthor,p[i].bversion, p[i].byear, p[i].bcost);
- 
+                         else
+                            printf("No books available in the given Author");
+                            break;
                     }
                     break;
                
@@ -72,6 +74,7 @@ int main()
                     for(i=0;i<n;i++)
                     {
                          printf("\nBook Name : %s\nAuthor name : %s\nBook Version : %d\nBook Year : %s\nBook Cost : %d\n\n",p[i].bname,p[i].bauthor,p[i].bversion, p[i].byear, p[i].bcost);
+                    
                     }
                     break;
                case 3:
@@ -80,7 +83,10 @@ int main()
                     for(i=0;i<n;i++)
                     {
                     if(strcmp(p[i].byear,year)==0)
-                            printf("\nBook Name : %s\nAuthor name : %s\nBook Version : %d\nBook Year : %s\nBook Cost : %d",p[i].bname,p[i].bauthor,p[i].bversion, p[i].byear, p[i].bcost);
+                        printf("\nBook Name : %s\nAuthor name : %s\nBook Version : %d\nBook Year : %s\nBook Cost : %d",p[i].bname,p[i].bauthor,p[i].bversion, p[i].byear, p[i].bcost);
+                    else
+                        printf("No books available in the given year");
+                        break;     
                     }
                     break;
                case 4:
