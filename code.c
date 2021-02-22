@@ -47,12 +47,17 @@ int main()
                case 1:
                     printf("Enter Author Name : ");
                     scanf("%s",authorname);
+                    int exists=0;
                     for(i=0;i<n;i++)
                     {
-                         if(strcmp(p[i].bauthor,authorname)==0)
-                            printf("\nBook Name : %s\nAuthor name : %s\nBook Version : %d\nBook Year : %s\nBook Cost : %d",p[i].bname,p[i].bauthor,p[i].bversion, p[i].byear, p[i].bcost);
- 
+                         if(strcmp(p[i].bauthor,authorname)==0){
+                            printf("\nBook Name : %s\nAuthor name : %s\nBook Version : %d\nBook Year : %s\nBook Cost : %d\n\n",p[i].bname,p[i].bauthor,p[i].bversion, p[i].byear, p[i].bcost);
+                            exists=1;         
+                         } 
                     }
+                         if(!exists){
+                             printf("Books are not available for the given author");
+                         }
                     break;
                
                case 2:
@@ -77,10 +82,17 @@ int main()
                case 3:
                     printf("Enter year: ");
                     scanf("%s",year);
+                    exists=0;
                     for(i=0;i<n;i++)
                     {
-                    if(strcmp(p[i].byear,year)==0)
-                            printf("\nBook Name : %s\nAuthor name : %s\nBook Version : %d\nBook Year : %s\nBook Cost : %d",p[i].bname,p[i].bauthor,p[i].bversion, p[i].byear, p[i].bcost);
+                    if(strcmp(p[i].byear,year)==0){
+                            printf("\nBook Name : %s\nAuthor name : %s\nBook Version : %d\nBook Year : %s\nBook Cost : %d\n\n",p[i].bname,p[i].bauthor,p[i].bversion, p[i].byear, p[i].bcost);
+                            exists=1;
+                    }   
+                    }
+                    if(!exists)
+                    {
+                        printf("Books are not available for the given year");
                     }
                     break;
                case 4:
