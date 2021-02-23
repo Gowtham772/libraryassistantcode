@@ -36,8 +36,9 @@ int main()
           printf("\n1.Books of Specific Author");
           printf("\n2.Books of price");
           printf("\n3.Books of year ");
-          printf("\n4.All Books");
-          printf("\n5.Exit");
+          printf("\n4.Books of specific author and year");
+          printf("\n5.All Books");
+          printf("\n6.Exit");
           printf("\n------------------------------------------\n");
           printf("\nEnter Your Choice : ");
           scanf("%d",&ch);
@@ -51,6 +52,7 @@ int main()
                     for(i=0;i<n;i++)
                     {
                          if(strcmp(p[i].bauthor,authorname)==0){
+
                             printf("\nBook Name : %s\nAuthor name : %s\nBook Version : %d\nBook Year : %s\nBook Cost : %d\n\n",p[i].bname,p[i].bauthor,p[i].bversion, p[i].byear, p[i].bcost);
                             exists=1;         
                          } 
@@ -96,6 +98,25 @@ int main()
                     }
                     break;
                case 4:
+                    printf("Enter Author Name : ");
+                    scanf("%s",authorname);
+                    printf("Enter year: ");
+                    scanf("%s",year);
+                    exists=0;
+                    for(i=0;i<n;i++)
+                    {
+                         if((strcmp(p[i].bauthor,authorname)==0)&&(strcmp(p[i].byear,year)==0))
+                         {
+                            printf("\nBook Name : %s\nAuthor name : %s\nBook Version : %d\nBook Year : %s\nBook Cost : %d\n\n",p[i].bname,p[i].bauthor,p[i].bversion, p[i].byear, p[i].bcost);
+                            exists=1;         
+                         } 
+                    }
+                    if(!exists)
+                    {
+                        printf("Books are not available for the given author and year");
+                    }
+                    break;
+               case 5:
                     for(i=0;i<n;i++)
                     {
                          printf("Book Name : %s \n",p[i].bname);
@@ -106,7 +127,7 @@ int main()
                          printf("\n------------------------------------------\n");
                     }
                     break;
-               case 5:
+               case 6:
                     exit(0);
                 default:
                     printf("Invalid choice");
