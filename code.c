@@ -37,7 +37,7 @@ int main()
           printf("\n2.Applications of price");
           printf("\n3.Applications of year ");
           printf("\n4.Applications of specific author and year");
-          printf("\n5.Applications in the order of two two fields author and year ");
+          printf("\n5.Applications in the order of two fields of author and year ");
           printf("\n6.All Applications");
           printf("\n7.Exit");
           printf("\n------------------------------------------\n");
